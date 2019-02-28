@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `talk_db`.`student` (
   `phone` VARCHAR(45) NOT NULL,
   `profil` VARCHAR(255) NULL,
   `date_inscription` DATETIME NULL,
-  `access_key` enum('root','user') NOT NULL default 'user',
+  `access_key` VARCHAR(4) ,
   PRIMARY KEY (`id_student`))
 ENGINE = InnoDB;
 
@@ -162,3 +162,6 @@ CREATE INDEX `fk_answer_Etudiant1_idx` ON `talk_db`.`answer` (`id_student` ASC);
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO `student` (`id_student`, `firstname`, `lastname`, `email`, `phone`, `profil`, `date_inscription`, `access_key`) VALUES (NULL, 'Serigne Malick Ada', 'Gaye', 'sma.gaye94@gmail.com', '+221772979863', 'profil.jpg', '2019-02-28 20:55:24', 'root');
